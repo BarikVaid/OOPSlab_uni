@@ -1,13 +1,16 @@
 #include <stdio.h>
 int main() {
-    int n, rev = 0, rem;
-    printf("Enter a number: ");
-    scanf("%d", &n);
-    while(n != 0) {
-        rem = n % 10;
-        rev = rev * 10 + rem;
-        n /= 10;
-    }
-    printf("Reversed Number = %d", rev);
+    int n;
+    do {
+        printf("Enter a number (0 to stop): ");
+        scanf("%d",&n);
+        if(n==0) break;
+        int rev=0, temp=n;
+        while(temp!=0) {
+            rev=rev*10 + temp%10;
+            temp/=10;
+        }
+        printf("Reversed=%d\n",rev);
+    } while(n!=0);
     return 0;
 }
